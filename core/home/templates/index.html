@@ -2,12 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Tutorial</title>
-</head>
-<body>
-    <h1> Hello wecome to django server ! <h1></h1>
 
-    <p>lorem50 </p>
+    <style>
+        table th, td{
+            border : 1 px solid black ;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="contact.html">
+        Contact Us
+    </a>
+    |
+    <a href="about.html">
+        About Us
+    </a>
+
+    <h1> Hello wecome to django server ! </h1>
+
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Can Vote?</th>
+    </tr>
+
+    {% for people in peoples %}
+    <tr>
+        <td>{{ people.Name }}</td>
+        <td>{{ people.Age }}</td>
+        <td>
+            {% if people.Age < 18 %}
+                Cannot Vote
+            {% else %}
+                Can Vote
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+
 </body>
 </html>
