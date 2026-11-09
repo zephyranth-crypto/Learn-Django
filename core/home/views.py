@@ -9,10 +9,12 @@ def home(request):
         {'Name' : 'Robin', 'Age' : 15}
 
     ]
-    return render(request, "index.html", context = {'peoples' : peoples})
+    return render(request, "index.html", context = {'peoples' : peoples, 'page' : 'Home'})
 
 def about(request):
-    return render(request, "about.html")
+    context = {'page' : 'About-us'}
+    return render(request, "about.html", context)
 
 def contact(request):
-    return render(request, "contact.html")
+    context = {'page' : 'Contact'}
+    return render(request, "contact.html", context)
