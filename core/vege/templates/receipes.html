@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block start %}
 
-<div class="container">
+<div class="container mt-5">
 
-  <form>
+  <form class="col-6 mx-auto card p-3 shadow-lg">
+    <h2>Add Receipe</h2>
+    <hr>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Receipe Name</label>
       <input type="text" class="form-control">
@@ -19,7 +21,7 @@
       <input type="file" class="form-control">
     </div>
 
-    <button type="submit" class="btn-solid theme-primary">Submit</button>
+    <button type="submit" class="btn-solid theme-success">Add Receipe</button>
   </form>
 </div>
 
